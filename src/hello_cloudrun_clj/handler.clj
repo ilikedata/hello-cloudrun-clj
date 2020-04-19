@@ -13,14 +13,21 @@
                "Samir Nagheenanajar"
                "Michael Bolton"
                "Peter Gibbons"]]
-   (selmer/render "<h1>Hello {{name}}!</h1>
+   (selmer/render "<html><head>
+<title>Hello {{name}}!</title>
+</head>
+<body>
+<h1>Hello {{name}}!</h1>
 <ul>
 <li>Hello <a href='/'>World</a></li>
 {% for user in users %}
 <li>Hello <a href='/user/{{user}}/'>{{user}}</a></li>
 {% endfor %}
 </ul>
-" {:name name :users users})))
+<hr />
+<p><a href=\"https://github.com/ilikedata/hello-cloudrun-clj\">Code on Github</a></p>
+</body>
+</html>" {:name name :users users})))
 
 (defroutes app-routes
   (GET "/" [] (hello-page "World"))
