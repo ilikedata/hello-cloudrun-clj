@@ -1,4 +1,4 @@
-# hello-cloudrun-clj
+# Clojure on Google CloudRun
 
 A simple example showing how to create and deploy a Clojure web app to Google CloudRun.
 
